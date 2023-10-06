@@ -1,25 +1,39 @@
 # Baseten
 
-Learn how to use LangChain with models deployed on Baseten.
+[Baseten](https://baseten.co) provides all the infrastructure you need to deploy and serve ML models performantly, scalably, and cost-efficiently. With Baseten, you can:
 
-## Installation and setup
+- Deploy open-source models in two clicks from the [model library](https://app.baseten.co/explore).
+- Package and deploy your own models with [Truss](https://truss.baseten.co).
+- Set up autoscaling and observability for your models.
 
-- Create a [Baseten](https://baseten.co) account and [API key](https://docs.baseten.co/settings/api-keys).
-- Install the Baseten Python client with `pip install baseten`
-- Use your API key to authenticate with `baseten login`
+This doc provides an overview of Baseten as a LangChain provider and introduces the LLM, Chat model, and text embedding model components for Baseten.
+## Installation and Setup
 
-## Invoking a model
+- Create a [Baseten](https://baseten.co) account.
+- Make an [API key](https://docs.baseten.co/settings/api-keys) and save it as an environment variable named `BASETEN_API_KEY`.
+- Deploy [an open-source model](https://app.baseten.co/explore) or [your own model](https://truss.baseten.co) and copy the model ID.
 
-Baseten integrates with LangChain through the LLM module, which provides a standardized and interoperable interface for models that are deployed on your Baseten workspace.
+## LLM
 
-You can deploy foundation models like WizardLM and Alpaca with one click from the [Baseten model library](https://app.baseten.co/explore/) or if you have your own model, [deploy it with this tutorial](https://docs.baseten.co/deploying-models/deploy).
-
-In this example, we'll work with WizardLM. [Deploy WizardLM here](https://app.baseten.co/explore/wizardlm) and follow along with the deployed [model's version ID](https://docs.baseten.co/managing-models/manage).
+See a [usage example](/docs/integrations/llms/baseten).
 
 ```python
 from langchain.llms import Baseten
+```
 
-wizardlm = Baseten(model="MODEL_VERSION_ID", verbose=True)
 
-wizardlm("What is the difference between a Wizard and a Sorcerer?")
+## Chat model
+
+See a [usage example](/docs/integrations/chat/baseten).
+
+```python
+from langchain.chat_models import ChatBaseten
+```
+
+## Text Embedding Model
+
+See a [usage example](/docs/integrations/text_embedding/baseten)
+
+```python
+from langchain.embeddings import BasetenEmbeddings
 ```
