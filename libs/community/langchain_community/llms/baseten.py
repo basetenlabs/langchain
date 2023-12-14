@@ -30,20 +30,20 @@ class Baseten(LLM):
     These code samples use
     [Mistral 7B Instruct](https://app.baseten.co/explore/mistral_7b_instruct)
     from Baseten's model library.
-    
+
     Examples:
         .. code-block:: python
             from langchain.llms import Baseten
             # Production deployment
             mistral = Baseten(model="MODEL_ID", deployment="production")
             mistral("What is the Mistral wind?")
-        
+
         .. code-block:: python
             from langchain.llms import Baseten
             # Development deployment
             mistral = Baseten(model="MODEL_ID", deployment="development")
             mistral("What is the Mistral wind?")
-        
+
         .. code-block:: python
             from langchain.llms import Baseten
             # Other published deployment
@@ -81,7 +81,7 @@ class Baseten(LLM):
             model_url = f"https://model-{model_id}.api.baseten.co/production/predict"
         elif self.deployment == "development":
             model_url = f"https://model-{model_id}.api.baseten.co/development/predict"
-        else: # try specific deployment ID
+        else:  # try specific deployment ID
             model_url = f"https://model-{model_id}.api.baseten.co/deployment/{self.deployment}/predict"
         response = requests.post(
             model_url,
