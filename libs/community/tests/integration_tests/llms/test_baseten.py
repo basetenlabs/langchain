@@ -1,5 +1,6 @@
 """Test Baseten API wrapper."""
 import os
+
 from langchain_community.llms.baseten import Baseten
 
 # This test requires valid BASETEN_MODEL_ID and BASETEN_API_KEY environment variables

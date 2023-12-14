@@ -1,8 +1,8 @@
-import os
 import logging
-import requests
+import os
 from typing import Any, Dict, List, Mapping, Optional
 
+import requests
 from langchain_core.callbacks import CallbackManagerForLLMRun
 from langchain_core.language_models.llms import LLM
 from langchain_core.pydantic_v1 import Field
@@ -23,7 +23,7 @@ class Baseten(LLM):
 
     To use this module, you must:
 
-    * Export your [Baseten API key](https://docs.baseten.co/observability/api-keys) as the environment variable `BASETEN_API_KEY`
+    * Export your Baseten API key as the environment variable `BASETEN_API_KEY`
     * Get the model ID for your model from your Baseten dashboard
     * Identify the model deployment ("production" for all model library models)
 
